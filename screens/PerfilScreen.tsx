@@ -4,7 +4,7 @@ import { globalStyles } from '../styles/GlobalStyles'
 
 
 
-export default function RegistroScreen() {
+export default function Perfilcreen() {
 
 const [correo, setCorreo] = useState("")
 const [contrasenia, setContrasenia] = useState("")

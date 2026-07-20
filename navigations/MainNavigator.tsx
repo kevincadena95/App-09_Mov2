@@ -25,8 +25,6 @@ function MyStack() {
 function MyDrawer() {
     return (
         <Drawer.Navigator>
-            <Drawer.Screen name="Login" component={LoginScreen} />
-            <Drawer.Screen name="Registro" component={RegistroScreen} />
             <Drawer.Screen name="Perfil" component={PerfilScreen} />
             <Drawer.Screen name="Leer" component={LeerScreen} />
             <Drawer.Screen name="Guardar" component={GuardarScreen} />
@@ -35,7 +33,7 @@ function MyDrawer() {
 }
 
 
-export function Navegador() {
+export function MainNavigator() {
     return (
         <NavigationContainer>
             <MyStack />

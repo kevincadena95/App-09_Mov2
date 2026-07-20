@@ -1,10 +1,40 @@
-import { StyleSheet, Text, View } from 'react-native'
-import React from 'react'
+import { Button, StyleSheet, Text, TextInput, View } from 'react-native'
+import React, { useState } from 'react'
+import { globalStyles } from '../styles/GlobalStyles'
+
+
 
 export default function RegistroScreen() {
+
+const [correo, setCorreo] = useState("")
+const [contrasenia, setContrasenia] = useState("")
+const [edad, setEdad] = useState(0)
+const [nick, setNick] = useState("")
+
+
   return (
     <View>
-      <Text>RegistroScreen</Text>
+      <Text>Registrate</Text>
+
+      <TextInput placeholder="Ingrese su correo"
+        style={globalStyles.input} 
+        onChangeText={setCorreo}/>
+
+        <TextInput placeholder="Ingrese su Nick"
+        style={globalStyles.input} 
+        onChangeText={setNick}/>
+
+        <TextInput placeholder="Ingrese su edad"
+        style={globalStyles.input} 
+        onChangeText={(texto)=>setEdad(+texto)}/>
+
+      <TextInput placeholder="Ingrese la contraseña"
+        style={globalStyles.input} 
+        onChangeText={setContrasenia}/>
+
+        <Button title='Registro'
+        color={'green'}>
+        </Button>
     </View>
   )
 }
