@@ -41,29 +41,13 @@ export const globalStyles = StyleSheet.create({
     },
 
     boton: {
-        backgroundColor: '##72bbff',
         padding: 14,
         borderRadius: 8,
         margin: 10,
         alignItems: 'center',
     },
 
-    tarjetaCanciones: {
-        backgroundColor: '#bc6aff',
-        padding: 15,
-        marginBottom: 12,
-        borderRadius: 8,
-        borderWidth: 1,
-        borderColor: '#000000',
-        
-    },
 
-    textocanciones: {
-        fontSize: 16,
-        margin: 8,
-        color: 'white',
-        fontWeight: 500,
-    },
 
 
 

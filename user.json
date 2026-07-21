@@ -1,0 +1,24 @@
+ {
+    "_redirectEventId": undefined,
+    "apiKey": "AIzaSyAQ8XDkUsJJ5XARC_Xu1QXcWxjbMkydWQE",
+    "appName": "[DEFAULT]",
+    "createdAt": "1784638081156",
+    "displayName": undefined,
+    "email": "kevgeek5@gmail.com",
+    "emailVerified": false,
+    "isAnonymous": false,
+    "lastLoginAt": "1784638081156",
+    "phoneNumber": undefined,
+    "photoURL": undefined,
+    "providerData": [
+        [Object
+        ]
+    ],
+    "stsTokenManager": {
+        "accessToken": "eyJhbGciOiJSUzI1NiIsImtpZCI6ImIyNDg2Mzc0OTVjYjM4N2U0OWViNmRlMThkZjk5N2VlOGU1YWUyOTciLCJ0eXAiOiJKV1QifQ.eyJpc3MiOiJodHRwczovL3NlY3VyZXRva2VuLmdvb2dsZS5jb20vYXBwLTA2LWNmZGI0IiwiYXVkIjoiYXBwLTA2LWNmZGI0IiwiYXV0aF90aW1lIjoxNzg0NjM4MTYwLCJ1c2VyX2lkIjoiYXdraFROZmk2M1l0M084QmZLS0phVHYzWDEzMiIsInN1YiI6ImF3a2hUTmZpNjNZdDNPOEJmS0tKYVR2M1gxMzIiLCJpYXQiOjE3ODQ2MzgxNjAsImV4cCI6MTc4NDY0MTc2MCwiZW1haWwiOiJrZXZnZWVrNUBnbWFpbC5jb20iLCJlbWFpbF92ZXJpZmllZCI6ZmFsc2UsImZpcmViYXNlIjp7ImlkZW50aXRpZXMiOnsiZW1haWwiOlsia2V2Z2VlazVAZ21haWwuY29tIl19LCJzaWduX2luX3Byb3ZpZGVyIjoicGFzc3dvcmQifX0.Fh6fKQ5zv3qiV86k1fE5JxJzaf3N2ykPhuo6V0m1qHObvuLofDliykzfpfSpPZWvDJP-3q7wpwzYAWsTVOoMLPJL06sTU1qf3YodAC4UONV10-CEMfeYyvfv6cL3HTA04k9B0J_d5RWM8MXETXYMZpcaHSGS5Wii0y0jDCe_HZr5lmNo9sxnnHuReOHy5E9wMrMJGu55vjNZ7DEhAjrGJeS3K9nSA72blkT3EM9t11U1YYABRa0vfLQnsKxVw_X6lmbzqcMlIrBkEXOOoDlMNuwWEUSOW2sfYTKx_QqTSh1NK48Hju46G2o8RrI8S0t_xO-CWNabI2svK2oTwIXiIg",
+        "expirationTime": 1784641760430,
+        "refreshToken": "AMf-vBz93Y-VQGT1kUI66PwkqQFCmO1Um9B0bzVsAtFjNIWiGGmJUJqyNI147clTRKf8-vruf7BlgDfWdzjjqeoWFeaXiI0luvCKPZ2qjfFaJbiqJg9AjzY2eNSGQEpgM8EwLca8ez71n7Lp6tkOe_jDimpqwQlHyh8Ddin1tVL9NTsTQVVzImaVYAy9G6C8deH3t6XmjO4hVZXwik8wOb5_tcLXukvcag"
+    },
+    "tenantId": undefined,
+    "uid": "awkhTNfi63Yt3O8BfKKJaTv3X132"
+}
