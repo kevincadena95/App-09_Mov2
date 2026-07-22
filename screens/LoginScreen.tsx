@@ -1,7 +1,7 @@
 import { Alert, Button, StyleSheet, Text, TextInput, View } from 'react-native'
 import React, { useState } from 'react'
 import { globalStyles } from '../styles/GlobalStyles'
-import { signInWithEmailAndPassword } from 'firebase/auth'
+import { sendPasswordResetEmail, signInWithEmailAndPassword } from 'firebase/auth'
 import { auth } from '../firebase/FirebaseConfig'
 
 
@@ -26,39 +26,38 @@ export default function LoginScreen({ navigation }: any) {
         const errorMessage = error.message;
         console.log(errorCode);
 
-        if (errorCode == "auth/invalid-email") {
-          Alert.alert("Correo invalido", "Verificar el campo de correo")
-        } else if (errorCode == "auth/missing-password") {
-          Alert.alert("Contraseña invalida", "Verificar el campo de contraseña")
-        } else if (errorCode == " auth/invalid-credential") {
-          Alert.alert("Correo o contraseña incorrectos", "Verificar los campos")
-        }
-        else {
-          Alert.alert("Error", "Verificar Credenciales")
-        }
-
         switch (errorCode) {
           case "auth/invalid-email":
-            alert("Error 400: La solicitud enviada es incorrecta.");
+            Alert.alert("Correo invalido", "Verificar el campo de correo")
             break;
           case "auth/missing-password":
-            alert("Error 401: No estás autorizado para ver este contenido.");
+            Alert.alert("Contraseña invalida", "Verificar el campo de contraseña")
             break;
           case "auth/invalid-credential":
-            alert("Error 403: Acceso denegado. No tienes permisos.");
-            break;
-          case 404:
-            alert("Error 404: La página que buscas no existe.");
-            break;
-          case 500:
-            alert("Error 500: Error interno del servidor. Intenta más tarde.");
+            Alert.alert("Correo o contraseña incorrectos", "Verificar los campos")
             break;
           default:
-            alert("Error, Verificar Credenciales");
+            Alert.alert("Error", "Verificar Credenciales")
         }
 
       });
 
+  }
+
+
+  function restablecerContrasenia() {
+    sendPasswordResetEmail(auth, correo)
+      .then(() => {
+        // Password reset email sent!
+        // ..
+        Alert.alert("Mensaje", "Se envio un mensaje a tu correo")
+      })
+      .catch((error) => {
+        const errorCode = error.code;
+        const errorMessage = error.message;
+        // ..
+        
+      });
   }
 
   return (
@@ -80,6 +79,12 @@ export default function LoginScreen({ navigation }: any) {
       <Text onPress={() => navigation.navigate("Registro")}>
         No tienes cuenta? Registrate aqui!
       </Text>
+
+
+      <Button
+        title='Olvidaste la contraseña?' 
+        onPress={restablecerContrasenia}/>
+        
     </View>
   )
 }

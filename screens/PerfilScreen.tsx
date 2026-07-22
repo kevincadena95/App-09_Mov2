@@ -1,40 +1,34 @@
 import { Button, StyleSheet, Text, TextInput, View } from 'react-native'
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { globalStyles } from '../styles/GlobalStyles'
+import { getDatabase, onValue, ref } from 'firebase/database';
 
 
 
 export default function PerfilScreen() {
 
-const [correo, setCorreo] = useState("")
-const [contrasenia, setContrasenia] = useState("")
-const [edad, setEdad] = useState(0)
-const [nick, setNick] = useState("")
+  const [usuario, setUsuario] = useState({})
+
+
+  useEffect(() => {
+    leerUsuario("hON8mq4TAPYbP5KSxpyCBXsHSrk1")
+  }, [])
+
+
+  function leerUsuario(uid: string) {
+    const db = getDatabase();
+    const starCountRef = ref(db, 'usuarios/' + uid);
+    onValue(starCountRef, (snapshot) => {
+      const data = snapshot.val();
+      setUsuario(data)
+    });
+
+  }
 
 
   return (
     <View>
-      <Text>LOGIN</Text>
-
-      <TextInput placeholder="Ingrese su correo"
-        style={globalStyles.input} 
-        onChangeText={setCorreo}/>
-
-        <TextInput placeholder="Ingrese su Nick"
-        style={globalStyles.input} 
-        onChangeText={setNick}/>
-
-        <TextInput placeholder="Ingrese su edad"
-        style={globalStyles.input} 
-        onChangeText={(texto)=>setEdad(+texto)}/>
-
-      <TextInput placeholder="Ingrese la contraseña"
-        style={globalStyles.input} 
-        onChangeText={setContrasenia}/>
-
-        <Button title='Registro'
-        color={'green'}>
-        </Button>
+      <Text>LeerScreen</Text>
     </View>
   )
 }

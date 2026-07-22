@@ -3,10 +3,11 @@ import React, { useState } from 'react'
 import { globalStyles } from '../styles/GlobalStyles'
 import { createUserWithEmailAndPassword } from 'firebase/auth'
 import { auth } from '../firebase/FirebaseConfig'
+import { getDatabase, ref, set } from 'firebase/database'
 
 
 
-export default function RegistroScreen({navigation}: any) {
+export default function RegistroScreen({ navigation }: any) {
 
   const [correo, setCorreo] = useState("")
   const [contrasenia, setContrasenia] = useState("")
@@ -14,23 +15,35 @@ export default function RegistroScreen({navigation}: any) {
   const [nick, setNick] = useState("")
 
   function registro() {
-      createUserWithEmailAndPassword(auth, correo, contrasenia)
-        .then((userCredential) => {
-          // Signed-up
-          const user = userCredential.user;
-          navigation.navigate("Login");
-          console.log(user);
-        })
-        .catch((error) => {
-          const errorCode = error.code;
-          const errorMessage = error.message;
+    createUserWithEmailAndPassword(auth, correo, contrasenia)
+      .then((userCredential) => {
+        // Signed-up
+        const user = userCredential.user;
 
-          Alert.alert(errorCode, errorMessage)
-        });
-    
+        guardarUsuario(user.uid);
+        navigation.navigate("Login");
+        console.log(user.uid);
+      })
+      .catch((error) => {
+        const errorCode = error.code;
+        const errorMessage = error.message;
+
+        Alert.alert(errorCode, errorMessage)
+      });
+
   }
 
-  
+
+  function guardarUsuario(uid: string) {
+    const db = getDatabase();
+    set(ref(db, 'usuarios/' + uid), {
+      correo: correo,
+      edad: edad,
+      nick: nick
+    });
+  }
+
+
 
 
   return (
@@ -53,9 +66,9 @@ export default function RegistroScreen({navigation}: any) {
         style={globalStyles.input}
         onChangeText={setContrasenia} />
 
-      <Button title='Registro'  
+      <Button title='Registro'
         color={'green'}
-        onPress={registro}>
+        onPress={registro }>
       </Button>
     </View>
   )
