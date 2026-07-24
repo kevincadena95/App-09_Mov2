@@ -5,15 +5,13 @@ export const globalStyles = StyleSheet.create({
     contenedor: {
         flex: 1,
         padding: 20,
-        
+
     },
 
-
     contenedorLista: {
-        flex: 1,
         padding: 20,
         margin: 3,
-        backgroundColor: "#4071db"
+        backgroundColor: "#5f8ef3",
     },
 
     titulo: {
