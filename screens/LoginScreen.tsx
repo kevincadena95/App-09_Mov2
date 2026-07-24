@@ -18,6 +18,9 @@ export default function LoginScreen({ navigation }: any) {
         // Signed in 
         const user = userCredential.user;
         console.log(user)
+      
+         Alert.alert("Se Inició Sesión");
+
         navigation.navigate('MyDrawer')
         // ...
       })
@@ -76,7 +79,9 @@ export default function LoginScreen({ navigation }: any) {
         onPress={login} />
 
 
-      <Text onPress={() => navigation.navigate("Registro")}>
+      <Text 
+      style={{ color: '#239fcf', margin: 15 }}
+      onPress={() => navigation.navigate("Registro")}>
         No tienes cuenta? Registrate aqui!
       </Text>
 

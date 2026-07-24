@@ -43,6 +43,7 @@ export const globalStyles = StyleSheet.create({
         borderRadius: 8,
         margin: 10,
         alignItems: 'center',
+        
     },
 
 

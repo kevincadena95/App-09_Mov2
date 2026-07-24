@@ -21,6 +21,9 @@ export default function RegistroScreen({ navigation }: any) {
         const user = userCredential.user;
 
         guardarUsuario(user.uid);
+        
+        Alert.alert("Se Registro el Usuario Correctamente");
+
         navigation.navigate("Login");
         console.log(user.uid);
       })
